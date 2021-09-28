@@ -33,8 +33,8 @@ def createben_train_test(ben_path, train_path, test_path):
 def createmal_train_test(mal_path, train_path, test_path):
     for dirpath, dirnames, filenames in os.walk(mal_path):
         print(len(filenames))
-        train_mal = filenames[0:17582]
-        test_mal = filenames[17582:]
+        train_mal = filenames[0:15629]
+        test_mal = filenames[15629:]
         print(len(train_mal))
         print(len(test_mal))
         for i in train_mal:
@@ -46,7 +46,8 @@ def createmal_train_test(mal_path, train_path, test_path):
 
 
 if __name__ == '__main__':
-    # 按照比例创建良性的训练测试集合
-    createben_train_test(ben_path, train_path, test_path)
-    # 按照比例创建恶意的训练测试集合
+    # 按照比例创建恶意的训练测试集合 训练测试比例 8：2 由于要构造一些对抗性的样本考虑到原始数据除去不含有PE结构的恶意代码之后的数量有限
     createmal_train_test(mal_path, train_path, test_path)
+    # 按照比例创建良性的训练测试集合 训练测试比例 9：1
+    createben_train_test(ben_path, train_path, test_path)
+

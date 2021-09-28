@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import shutil
 import string
-
+# 这里没有第二步 第二步是调用avclass中的函数得到txt文件 然后转化为csv文件
 md5_lables = []
 lables = []
 # 首先把所有的标签和md5的格式加入

@@ -1,24 +1,27 @@
 exp_name: 'example'
 
-### Data path
+### 数据路径
 train_data_path: 'data/train/'                    # Training data
-train_label_path: 'data/example-train-label.csv' # Training label
-valid_data_path: 'data/valid/'                    # Validation Data
-valid_label_path: 'data/example-valid-label.csv' # Validation Label
+train_label_path: 'data/train_lable.csv' # Training label
+test_data_path: 'data/test/'                    # Validation Data
+test_label_path: 'data/test_lable.csv' # Validation Label
 
-### output path
-log_dir: 'log/'
-pred_dir: 'pred/'
-checkpoint_dir: 'checkpoint/'
+
+### 输出路径
+log_dir: 'log/' # 日志路径
+pred_dir: 'pred/' # 预测结果
+checkpoint_dir: 'checkpoint/'# 模型存储路径
 
 ### Parameter
 use_gpu: True             #
 use_cpu: 1                # Number of cores to use for data loader
-display_step: 2           # Std output update rate during training 训练过程中的
-test_step: 20             # Test per n step
+display_step: 5           # Std output update rate during training 训练过程中的屏幕输出的频率
+test_step: 50             # Test per n step 50次洗牌之后来一次验证集
 learning_rate: 0.0001     #
-max_step: 1000            # Number of steps to train
+max_step: 1000            # Number of steps to train 训练的次数
+epoch_size: 10            # 多少轮的epoch
 batch_size: 20            #
 first_n_byte: 2000000     # First N bytes of a PE file as the input of MalConv (defualt: 2 million)
 window_size: 500          # Kernel size & stride for Malconv (defualt : 500)
 sample_cnt: 1             # Number of data sampled for trianing (defualt 1 = all)
+kfold: 5
